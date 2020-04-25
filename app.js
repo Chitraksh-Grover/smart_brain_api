@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/',(req,res)=>{
-	res.send(database.users);
+	res.send("All working well");
 })
 
 app.post('/signin',(req,res)=>{
@@ -102,6 +102,6 @@ app.put('/image',(req,res) => {
 })
 
 
-app.listen(3000,()=>{
-	console.log("This is working");
+app.listen(process.env.PORT || 3000,()=>{
+	console.log(`App is running on port ${process.env.PORT || 3000}`);
 });
